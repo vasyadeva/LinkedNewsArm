@@ -1,0 +1,107 @@
+﻿@model IEnumerable<LinkedNewsChatApp.Data.News>
+
+@{
+ 
+    
+}
+
+<h1 class="news_hd">Новини</h1>
+ <div class="cont" style="display:flex; justify-content:center;flex-direction: row; flex-wrap:wrap">
+         <a class="News_cat" asp-action="Index" asp-route-Category="Загальне" asp-route-page="1">Загальне</a>
+                       <a class="News_cat"   asp-action="Index" asp-route-Category="Спорт" asp-route-page="1">Спорт</a>               
+                       <a class="News_cat"  asp-action="Index" asp-route-Category="Політика" asp-route-page="1">Політика</a>
+                       <a class="News_cat"  asp-action="Index" asp-route-Category="Війна" asp-route-page="1">Війна</a>
+                       <a class="News_cat"  asp-action="Index" asp-route-Category="Наука" asp-route-page="1">Наука</a>
+                       <a class="News_cat"  asp-action="Index" asp-route-Category="Економіка" asp-route-page="1">Економіка</a>
+                       <a class="News_cat"  asp-action="Index" asp-route-Category="Технології" asp-route-page="1">Технології</a>
+                       <a class="News_cat"  asp-action="Index" asp-route-Category="Лайт" asp-route-page="1">Лайт</a>
+                       <a class="News_cat"  asp-action="Index" asp-route-Category="Погода" asp-route-page="1">Погода</a>
+
+  </div>
+   <main class="main columns">
+@foreach (var item in Model)
+{
+  
+  <section class="column_NI">
+            <a class="article_NI"  asp-action="Data" asp-route-id="@item.id">
+      <figure class="article_image">
+                    @{
+                        string base64String = Convert.ToBase64String(item.photo);
+                    }
+                    <img src="data:image/png;base64, @(base64String)" width="180" />
+      </figure>
+      <div class="article_body">
+        <h2 class="article_title">
+                        @item.title
+        </h2>
+        <footer id="article_info">
+                        <span>@item.Time</span>
+        </footer>
+      </div>
+    </a>
+  </section>
+}
+
+
+</main>
+<div style="display: flex; justify-content: center;">
+    <nav>
+        <ul id="page_scroll" class="pagination">
+            <li class="page-item @(ViewBag.CurrentPage == 1 ? "disabled" : "")">
+                <a class="page-link" asp-action="Index" asp-route-Category="@ViewBag.Category" asp-route-page="@(ViewBag.CurrentPage - 1)">&laquo;</a>
+            </li>
+
+            @if (ViewBag.TotalPages <= 5)
+            {
+                @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                {
+                    <li class="page-item @(ViewBag.CurrentPage == i ? "active" : "")">
+                        <a class="page-link" asp-action="Index" asp-route-Category="@ViewBag.Category" asp-route-page="@i">@i</a>
+                    </li>
+                }
+            }
+            else
+            {
+                @if (ViewBag.CurrentPage > 3)
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-action="Index" asp-route-Category="@ViewBag.Category" asp-route-page="1">1</a>
+                    </li>
+                    @if (ViewBag.CurrentPage > 4)
+                    {
+                        <li class="page-item disabled">
+                            <span class="page-link">...</span>
+                        </li>
+                    }
+                }
+                @for (int i = Math.Max(1, ViewBag.CurrentPage - 2); i <= Math.Min(ViewBag.TotalPages, ViewBag.CurrentPage + 2); i++)
+                {
+                    <li class="page-item @(ViewBag.CurrentPage == i ? "active" : "")">
+                        <a class="page-link" asp-action="Index" asp-route-Category="@ViewBag.Category" asp-route-page="@i">@i</a>
+                    </li>
+                }
+                @if (ViewBag.CurrentPage < ViewBag.TotalPages - 2)
+                {
+                    @if (ViewBag.CurrentPage < ViewBag.TotalPages - 3)
+                    {
+                        <li class="page-item disabled">
+                            <span class="page-link">...</span>
+                        </li>
+                    }
+                    <li class="page-item">
+                        <a class="page-link" asp-action="Index" asp-route-Category="@ViewBag.Category" asp-route-page="@ViewBag.TotalPages">@ViewBag.TotalPages</a>
+                    </li>
+                }
+            }
+
+            <li class="page-item @(ViewBag.CurrentPage == ViewBag.TotalPages ? "disabled" : "")">
+                <a class="page-link" asp-action="Index" asp-route-Category="@ViewBag.Category" asp-route-page="@(ViewBag.CurrentPage + 1)">&raquo;</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+
+
+
+   

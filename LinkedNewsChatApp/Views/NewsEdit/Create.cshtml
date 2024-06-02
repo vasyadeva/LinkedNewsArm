@@ -1,0 +1,85 @@
+﻿@model LinkedNewsChatApp.Data.News
+
+@{
+    ViewData["Title"] = "Додавання новин";
+}
+<head>
+    
+<link rel="stylesheet" href="~/css/NewsCrate syle.css" asp-append-version="true" />
+</head>
+<h1 id="Crt_main">Create</h1>
+
+<h4>News</h4>
+<hr />
+<div id="create_news" class="row">
+    <div id="Crt_frm" >
+         @using (Html.BeginForm("Create", "NewsEdit", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div id="Crt_title" class="form-group">
+                <label asp-for="title" class="control-label"></label>
+                <input asp-for="title" class="form-control"  />
+                <span asp-validation-for="title" class="text-danger"></span>
+
+            </div>
+            <div id="Crt_text" class="form-group">
+                <label asp-for="text" class="control-label"></label>
+                <textarea id="Crt_It" asp-for="text" class="form-control" ></textarea>
+                <span asp-validation-for="text" class="text-danger"></span>
+            </div>
+            <div id="Crt_photo" class="form-group">
+                <label asp-for="photo" class="control-label"></label>
+                <input type="file" name="photo" class="form-control" required />
+                <!--<span asp-validation-for="photo" class="text-danger"></span>-->
+            </div>
+                <!-- <div id="Crt_category" class="form-group">
+                    <label asp-for="Category" class="control-label"></label>
+                    <textarea id="Crt_It" asp-for="Category" class="form-control"></textarea>
+                    <span asp-validation-for="Category" class="text-danger"></span>
+                </div>
+               -->
+                <div class="form-group">
+                    <label for="dropdownMenu">Category</label>
+                    <select id="dropdownMenu" name="Category" class="form-control" required>
+                        <option value="Загальне">Загальне</option>
+                        <option value="Спорт">Спорт</option>
+                        <option value="Політика">Політика</option>
+                        <option value="Війна">Війна</option>
+                        <option value="Наука">Наука</option>
+                        <option value="Економіка">Економіка</option>
+                        <option value="Технології">Технології</option>
+                        <option value="Лайт">Лайт</option>
+                        <option value="Погода">Погода</option>
+
+
+                    </select>
+                </div>
+
+                <div id="Crt_pass" class="form-group">
+                    <label name="AdminPassword" class="control-label"></label>
+                    <input type="password" name="password" class="form-control" required />
+                    <!--<span asp-validation-for="photo" class="text-danger"></span>-->
+                </div>
+            <!--<div class="form-group">
+                <label asp-for="Time" class="control-label"></label>
+                <input asp-for="Time" class="form-control" />
+                <span asp-validation-for="Time" class="text-danger"></span>
+            </div>-->
+            
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+        }
+    </div>
+</div>
+
+<div>
+     <a id="Na" asp-action="Index">Повернутись до списку новин</a>
+     <br/>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

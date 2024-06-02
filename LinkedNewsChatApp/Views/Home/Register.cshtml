@@ -1,0 +1,193 @@
+﻿@{
+    ViewData["Title"] = "Реєстрація";
+    var messageRegister = TempData["SuccessfulRegister"];
+    TempData.Keep("SuccessfulRegister");
+}
+@section Scripts
+{
+<script src="~/js/passwordValidation.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity=
+"sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+        crossorigin="anonymous">
+  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, 
+        then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity=
+"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous">
+    </script>
+      
+    <script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous">
+    </script>
+      
+    <script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity=
+"sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous">
+    </script>
+    <script>
+
+        function saveAvatarId(id) {
+  // Отримання посилання на поле AvatarId
+  var avatarIdInput = document.getElementById("AvatarId");
+  // Збереження значення ID обраного аватара в полі
+  avatarIdInput.value = id;
+}
+
+
+    </script>
+}
+@model UserModel
+
+@Html.AntiForgeryToken()
+
+<div class="text-center">
+    <h5 style="color: red"><b>@ViewBag.error</b></h5>
+</div>
+<div class="container">
+    <div class="d-flex justify-content-center h-100">
+        <div class="card" style="height:auto;">
+            <div class="card-header">
+                <h3>Зареєструватись</h3>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        <input asp-for="Username" placeholder="Ім'я користувача" class="form-control" />
+                        <span asp-validation-for="Username" class="text-warning"></span>
+                    </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                        </div>
+                        <input asp-for="Email" placeholder="Електронна пошта" class="form-control" />
+                        <span asp-validation-for="Email" class="text-warning"></span>
+                    </div>
+
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key fa-spin"></i></span>
+                        </div>
+                        <input asp-for="Password" placeholder="Пароль" type="password" class="form-control" id="new1Password" />
+                        <span asp-validation-for="Password" class="text-warning"></span>
+                        <div id="pswd_info" class="pswd-security">
+                            <h4>Пароль має містити:</h4>
+                            <ul>
+                                <li id="letter" class="invalid"> Щонайменше <strong>одна маленька літера</strong></li>
+                                <li id="capital" class="invalid"> Щонайменше <strong>одна велика літера</strong></li>
+                                <li id="number" class="invalid"> Щонайменше <strong>одне число</strong></li>
+                                <li id="length" class="invalid"> Щонайменше  <strong>8 символів</strong></li>
+                                <li id="special" class="invalid"> Щонайменше <strong>один спеціальний символ</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key fa-spin"></i></span>
+                        </div>
+                        <input asp-for="ConfirmPassword" placeholder="Підтвердіть ваш пароль" type="password" class="form-control" id="new2Password" />
+                        <span asp-validation-for="ConfirmPassword" class="text-warning"></span>
+                        <div id="pswd_equal" class="pswd-security">
+                            <ul>
+                                <li id="match" class="invalid"></li>
+                            </ul>
+                        </div>
+                    </div>
+                     <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-pencil-alt"></i></span>
+                        </div>
+                        <input asp-for="Biography" placeholder="Кілька слів про себе..." class="form-control" />
+                        <span asp-validation-for="Biography" class="text-warning"></span>
+                    </div>
+
+                <div class="input-group form-group">
+                     <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-map-marker"></i></span>
+                        </div>
+                  <select asp-for="Region" class="form-control">
+                    <option value="">Оберіть область</option>
+                    <option value="АР Крим">АР Крим</option>
+                    <option value="Вінницька область">Вінницька область</option>
+                    <option value="Волинська область">Волинська область</option>
+                    <option value="Дніпропетровська область">Дніпропетровська область</option>
+                    <option value="Донецька область">Донецька область</option>
+                    <option value="Житомирська область">Житомирська область</option>
+                    <option value="Закарпатська область">Закарпатська область</option>
+                    <option value="Запорізька область">Запорізька область</option>
+                    <option value="Івано-Франківська область">Івано-Франківська область</option>
+                    <option value="Київська область">Київська область</option>
+                    <option value="Кіровоградська область">Кіровоградська область</option>
+                    <option value="Луганська область">Луганська область</option>
+                    <option value="Львівська область">Львівська область</option>
+                    <option value="Миколаївська область">Миколаївська область</option>
+                    <option value="Одеська область">Одеська область</option>
+                    <option value="Полтавська область">Полтавська область</option>
+                    <option value="Рівненська область">Рівненська область</option>
+                    <option value="Сумська область">Сумська область</option>
+                    <option value="Тернопільська область">Тернопільська область</option>
+                    <option value="Харківська область">Харківська область</option>
+                    <option value="Херсонська область">Херсонська область </option>
+                    <option value="Хмельницька область">Хмельницька область</option>
+                    <option value="Черкаська область">Черкаська область</option>
+                    <option value="Чернівецька область">Чернівецька область</option>
+                    <option value="Чернігівська область">Чернігівська область</option>
+
+                    </select>
+
+
+                         <span asp-validation-for="Region" class="text-warning"></span>
+                    </div>
+                        <div class="input-group form-group text-center">
+                      <input type="hidden" name="AvatarId" id="AvatarId" value="" />
+
+                        
+                            <div class="dropdown text-center">
+                            <button class="btn btn-warning dropdown-toggle text-center" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:#FFC312;border-color:#FFC312;width:auto;text-align:center; ">
+                                    Оберіть аватар
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    @for (int i = 1; i <= 10; i++)
+                                    {
+                                        <li class="dropdown-item text-center">
+                                 <input type="hidden" name="AvatarId" id="AvatarId" value="" /> <img src="~/avatars/@(i).png" width="48" height="48" onclick="saveAvatarId(@i)" />
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="submit" value="Зареєструватись" class="btn float-left login_btn" />
+                    </div>
+                </form>
+            </div>
+            
+            <div class="card-footer">
+                <div class="d-flex justify-content-center footer-links">
+                    @Html.ActionLink("Вже зареєстровані? Увійдіть", "Index")
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+<br />
+
+

@@ -1,0 +1,10 @@
+﻿@model IDictionary<int, Tuple<string, string, string>>
+
+@foreach (var item in Model)
+{
+    <div style="background-color:antiquewhite;">
+        <h2>@item.Value.Item1</h2>
+        <p>@item.Value.Item2</p>
+        <img src="@item.Value.Item3" />
+    </div>
+}

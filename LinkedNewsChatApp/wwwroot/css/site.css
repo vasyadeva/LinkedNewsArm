@@ -1,0 +1,914 @@
+html {
+font-size: 14px;
+}
+
+@media (min-width: 768px) {
+html {
+font-size: 16px;
+}
+}
+
+html {
+position: relative;
+min-height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+ 
+    
+}
+
+html, body {
+   /* background-image: url(/images/back_phon.jpg) ;*/
+    /*background-color: #76b4f8 !important;*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto;
+    font-family: 'Numans', sans-serif;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #000000, #434343, #000000, #434343);
+    transform: scale(1);
+    animation: pulse 6s linear alternate infinite;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+.user-greeting {
+display: flex;
+align-items: center;
+margin-right: 20px;
+}
+
+    /*For reset password & register page div to show jquery validation*/
+    .pswd-security {
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 310px;
+        padding: 15px;
+        background: #fefefe;
+        font-size: .875em;
+        border-radius: 5px;
+        box-shadow: 0 1px 3px #ccc;
+        border: 1px solid #ddd;
+        z-index: 999;
+    }
+.p
+
+.pswd-security ul, .pswd-security li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.pswd-security h4 {
+    margin: 0 0 10px 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+.pswd-security .invalid {
+    background: url(../images/cancel.png) no-repeat 0 50%;
+    padding-left: 22px;
+    line-height: 24px;
+    color: #ec3f41;
+}
+
+.pswd-security .valid {
+    background: url(../images/accept.png) no-repeat 0 50%;
+    padding-left: 22px;
+    line-height: 24px;
+    color: #3a7d34;
+}
+
+.pswd-security {
+display: none;
+}
+/*End*/
+
+For chat
+
+.chat-main {
+width: 320px;
+padding: 100px;
+border: 5px solid gray;
+margin-top: 10px;
+margin-bottom: 200px;
+margin-right: 150px;
+margin-left: 80px;
+/*margin: 0;*/
+position: center;
+/*position: relative;*/
+/*left: 25px;*/
+/*left: 15%;
+right: 25%;*/
+/*margin-top: auto;
+margin-bottom: auto;*/
+}
+
+.message-box {
+    border: 2px solid #6d5c55;
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 100px;
+    margin-left: 100px;
+    height: 56vh;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.chat-input {
+    border: 2px solid #6d5c55;
+    border-radius: 5px;
+    /*background-color: #484242;*/
+    min-height: 90px;
+    max-height: 90px;
+    z-index: 25;
+    box-shadow: 0 -1px 2px 0 #333;
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    max-width: 100%;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+.one-message {
+    
+    overflow:hidden;
+    background: #FFE4B5;
+    padding: 10px 10px 0 10px;
+    
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 8px;
+    max-width: 100%;
+    width: auto;
+    box-shadow: 0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
+    overflow-wrap: break-word;
+    position: relative;
+}
+#messagesList{
+    padding-left:0.5rem;
+}
+
+.my-message {
+    overflow: hidden;
+    background: #bfd4ac;
+    position: relative;
+}
+
+.text-content{
+    color:black;
+}
+
+.message {
+   
+    display: block;
+    
+    width: calc(100%) !important;
+    text-align:justify;
+    font-size: 11pt;
+    color: rgba(255,255,255,.7);
+    margin: 0 0 4px 0;
+
+    overflow-wrap: break-word;
+}
+    .message p {
+        max-width: 100%;
+        margin-bottom: 0.5em;
+        
+        margin-top: -0.5em;
+    }
+
+.break {
+    display: flex;
+}
+.message:first-of-type {
+margin-top: 8px;
+}
+
+.one-message img {
+    display: inline-block;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background: #FFFFF0;
+    margin: 0 10px 10px 0;
+}
+
+ul {
+list-style-type: none;
+}
+
+.username {
+margin-right: 1rem;
+}
+
+.chat-input > textarea {
+flex-grow: 4;
+resize: none;
+}
+
+.chat-input > button {
+flex-grow: 1;
+}
+
+
+
+.message:first-of-type {
+    margin-top: 8px;
+}
+
+ul {
+list-style-type: none;
+}
+
+.username {
+margin-right: 1rem;
+}
+
+.chat-input > textarea {
+flex-grow: 4;
+resize: none;
+}
+
+.chat-input > button {
+flex-grow: 1;
+}
+
+.backToMain {
+    color: black;
+    background-color: #FFC312;
+    width: 100px;
+}
+
+.time-right {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 3%;
+    font-size: 9pt;
+    color: black;
+}
+/*End*/
+
+/*For users online*/
+.sidenavRight {
+    border: 2px solid #6d5c55;
+    border-radius: 5px;
+    height: 70%;
+    overflow-x: hidden;
+    width: 10rem;
+    min-width: 20px;
+    right: 0;
+    position: absolute;
+    top: 58px;
+    padding-top: 20px;
+    text-align:center;
+    background-color: rgba(0,0,0,0.6) !important;
+    margin-top: 1rem;
+   margin-right:0.5rem;
+}
+
+.user-connected {
+width: 100%;
+padding-inline-start: 0;
+margin-bottom: 0.5em;
+position: center;
+background-color: #ffffff;
+}
+
+.ul#userOnlineList {
+list-style-type: none;
+padding-left: 0;
+position: center;
+}
+/*End*/
+
+/*For groups*/
+.sidenavLeft {
+    border: 2px solid #6d5c55;
+    border-radius: 5px;
+    height: 70%;
+    overflow-x: hidden;
+    width: 10rem;
+    min-width: 10px;
+    left: 0;
+    position: absolute;
+    top: 58px;
+    padding-top: 20px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.6) !important;
+    margin-top: 1rem;
+    margin-left:0.5rem;
+    
+}
+
+.group-connected {
+width: 100%;
+padding-inline-start: 0;
+margin-bottom: 0.2em;
+position: center;
+background-color: #ffffff;
+}
+
+/**/
+.connection {
+text-align: center;
+color: #5b5e6c
+}
+/*End*/
+
+/*For Log in & Register*/
+.container {
+    flex: 1;
+    height: 100%;
+    align-content: center;
+    color: black;
+    margin-bottom: 10%;
+}
+
+.card {
+height: 410px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(0,0,0,0.5) !important;
+}
+
+.card-header h3 {
+color: white;
+}
+
+.input-group-prepend span {
+width: 50px;
+background-color: #FFC312;
+color: black;
+border: 0 !important;
+}
+
+input:focus {
+outline: 0 0 0 0 !important;
+box-shadow: 0 0 0 0 !important;
+}
+
+.login_btn {
+color: black;
+background-color: #FFC312;
+width: 100px;
+}
+
+.login_btn:hover {
+    color: black;
+    background-color: white;
+}
+
+
+
+/*End*/
+.footer-links a, .footer-links a:hover {
+    color: lightcoral;
+}
+.Profile-stylish {
+    margin: 30px 0px 0px 0px;  
+    padding: 0px 0px 285px 0px;
+    border-style: outset ;
+    background-image: url('../images/Wallpaper.jpg');
+    backdrop-filter: opacity(70%);
+}
+.row {
+    color: lightcyan;
+    filter: opacity(85%);
+}
+.news-color {
+    color: black;
+    background-color: white;
+    margin-left: 8px;
+    margin-bottom:3%;
+    width: 45%;
+   
+}
+.news-img {
+    width: 580px;
+    height: 360px;
+    margin-right: 100%;
+    border: 2px solid #6d5c55;
+}
+#news-img {
+    margin-top: 5px;
+    margin-bottom: 3px;
+    margin-left: 1%;
+}
+.news-container {
+    display: flex;
+    align-items: stretch;
+    background-image: linear-gradient(to bottom right, #27afc9, #b0a6a5);
+    margin-bottom: 10px;
+    margin: 0% 0% 0% 0%;
+    margin-bottom: 30px;
+    border: 2px solid #6d5c55;
+    border-radius: 15px;
+    padding: 5px;
+}
+.p_style1{
+    margin-left:35%;
+}
+.p-style {
+    font-family: serif;
+    margin-right: 0%;
+    max-width: 450px;
+    max-height: 480px;
+    overflow: hidden;
+
+}
+.add_block {
+    margin-bottom: 1rem;
+}
+.add_input {
+    display: block;
+    width: 105%;
+    height: 25%;
+    padding-left: 60px;
+    padding: 1%;
+    max-height: auto;
+    max-width: auto;
+    font-family: inherit;
+    font-size: 0,5rem;
+    font-weight: 400;
+    line-height: 1;
+    background-color: #E58E00;
+    background-clip: padding-box;
+    border: 2px solid #ffbb02;
+    border-radius: 1rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.admin_ep {
+    max-width: 100px;
+}
+.edit_h {
+    display: flex;
+    color: #F7F7F9;
+    background-color: #FFBB02;
+    justify-content: center;
+    align-items: center;
+    background-size: auto;
+    width: 45%;
+    margin-left: 27%;
+    margin-bottom:1%;
+    border: 2px solid #bdbdbd;
+    border-radius: 1rem;
+    height: 50px;
+}
+.edit_h1 {
+    display: flex;
+    color: orangered;
+    background-color: aqua;
+    justify-content: center;
+    align-items: center;
+    background-size: auto;
+    width: 50%;
+    margin-left: 25%;
+    border: 2px solid #bdbdbd;
+    border-radius: 1rem;
+}
+input:hover, input:defined {
+    width: 100%;
+    color:black;
+    transition: .3s ease;
+    background-color: lavenderblush; 
+    border: 2px solid #515551;
+    border-radius: 1rem;
+    padding: 1%;
+    stroke-opacity: 1;
+}
+
+input:default {
+    background-color: #b621fe;
+}
+.form-text {
+    color: aliceblue;
+
+}
+#news_inpt1{
+    width: 80%;
+}
+#widget {
+    position: fixed;
+    bottom: 10%;
+    right: 8%;
+    display: none;
+ 
+}
+#widget.show{
+    display:block;
+}
+input:default {
+    background: #eda103;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+}
+input:default:hover {
+    color: rgba(251,75,2,1);
+    background: #0f9605;
+    transition: 1.5s;
+}
+
+
+
+.abt-par {
+    border: solid 3px #032a9e;
+    border-radius: 1rem;
+    text-shadow: 1em;
+    padding: 1rem;
+    font-size:20px;
+    background-color: #2756e4;
+}
+.abt-data {
+    margin-top: 1%;
+    border: solid 3px #032a9e;
+    border-radius: 0.5rem;
+    background-color: #2756e4;
+}
+.container-foot {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    align-content: center;
+    color: black;
+}
+.abt-member {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    margin-top: 1%;
+    margin-bottom: 5%;
+    border: solid 3px #032a9e;
+    border-radius: 1rem;
+    background-color: #2756e4;
+}
+#Ne_Ed{
+    width: 100%;
+    margin-left: 2rem;
+}
+.new_ad12{
+    margin-left:35%;
+}
+
+#article-info {
+    position: absolute;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 1%;
+    color: #777;
+}
+
+
+
+#show-groups-btn {
+    display: none; /* Сховати кнопку за замовчуванням */
+}
+
+
+@media (min-width: 580px) {
+
+    .spbutton {
+        display: none;
+    }
+    .spbutton2 {
+        display: none;
+    }
+}
+
+
+
+@media screen and (max-width: 630px) {
+    .groups-main #mySidenavGroups {
+        display: none; /* Сховати блок з групами */
+    }
+    #mySidenavUsers {
+        display: none; /* Сховати блок з групами */
+    }
+    .message-box {
+        min-width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .chat-input {
+        min-width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .spbutton {
+        display: block;
+    }
+    .spbutton2 {
+        display: block;
+    }
+}
+
+/*-------------------*/
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+        .sidenav a {
+            font-size: 18px;
+        }
+}
+
+.groups-main2 {
+    color:white;
+    width: 300px;
+}
+
+.sidenavLeft2 {
+    border: 2px solid #6d5c55;
+    border-radius: 5px;
+    height: 75%;
+    overflow-x: hidden;
+    width: 13%;
+    min-width: 150px;
+    min-width: 220px;
+    left: 0;
+    position: absolute;
+    top: 58px;
+    padding-top: 40px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.5) !important;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    margin-right: 80px;
+    margin-left: 10px;
+}
+
+.sidenavRight2 {
+    border: 2px solid #6d5c55;
+    border-radius: 5px;
+    height: 75%;
+    overflow-x: hidden;
+    width: 13%;
+    min-width: 150px;
+    max-width: 220px;
+    right: 0;
+    position: absolute;
+    top: 58px;
+    padding-top: 40px;
+    background-color: rgba(0,0,0,0.5) !important;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    margin-right: 10px;
+    margin-left: 80px;
+}
+.body_wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.mrg_foot {
+    margin-bottom: 0rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+#create_news {
+    display: flex;
+    width: 100%;
+    height: 30%;
+    padding-left: 60px;
+    padding: 2%;
+    max-width: 1100px;
+    font-family: inherit;
+    font-size: 0,5rem;
+    font-weight: 400;
+    line-height: 2;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 2px solid #bdbdbd;
+    border-radius: 1rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+#Edit_text{
+    overflow:revert;
+}
+#LeaveButton {
+    margin-top: .5em;
+    max-width: 60%;
+    min-width: 60%;
+    font-weight: 900;
+    background-color: #d70114;
+    color: #FFFFFF;
+    width: 32%;
+    font-size: 20px;
+    margin-bottom: .5em;
+    text-align: center;
+    margin-left: 21%;
+    opacity: 90%;
+}
+    #LeaveButton:hover {
+        background-color: #FF4444;
+        opacity: 90%;
+    }
+#sendButton {
+    /* Задаємо вигляд кнопки */
+    display: inline-block;
+    padding: 10px 20px;
+    width:22%;
+    border-radius: 0.25rem;
+    background-color: #0a38a4;
+    color: #ffffff; /* Колір тексту */
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    /* Додаємо стилі при наведенні курсору */
+    transition: background-color 0.3s ease;
+}
+
+    #sendButton:hover {
+        background-color: #0d62bf; /* Колір фону при наведенні */
+        color: whitesmoke;
+    }
+@media screen and (max-width: 550px) {
+    #sendButton {
+        width:25%;
+        padding: 15px 30px;
+        font-size: 15px;
+        text-align:center;
+    }
+    }
+@media screen and (max-width: 400px) {
+    #sendButton {
+        padding:1rem;
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+    .h2 {
+        border-radius: 1rem;
+        border: 1px solid black;
+        padding: 0.25rem;
+    }
+
+    .mb-2 {
+        color: #f0e2c3 !important;
+    }
+
+    .news_hd {
+        font-size: 48px;
+        text-align: center;
+        margin-top: 20px;
+        color: #fff;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    }
+
+    /* Стиль головного блоку */
+    .main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+    /* Стиль колонок */
+    .columns .column_NI {
+        margin: 20px;
+        max-width: 300px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(1, 1, 1, 5);
+        overflow: hidden;
+    }
+
+    /* Стиль зображення новини */
+    .article_image {
+        position: relative;
+        overflow: hidden;
+    }
+
+        .article_image img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .article_image:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .article_image:hover:before {
+            opacity: 1;
+        }
+
+        .article_image:hover img {
+            transform: scale(1.1);
+        }
+
+    /* Стиль тексту новини */
+    .article_body {
+        padding: 20px;
+        text-align: justify;
+    }
+
+    .article_title {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #434343 !important;
+        text-decoration: wavy;
+    }
+
+
+
+    /* Стиль дати новини */
+    #article_info {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #aaa;
+        
+    }
+
+
+    h1, h2, h3, h4, h5, h6, center {
+        color: white !important;
+    }
+
+    /*---------------------*/
+
+    .btn-check:focus + .btn-success, .btn-success:focus {
+        color: #fff;
+        background-color: #FFC312 !important;
+        border-color: #FFC312 !important;
+        box-shadow: 0 0 0 .2rem rgba(255 195 18,.5) !important;
+    }
+
+.News_cat {
+    display: inline-block;
+    background-color: #eaeaea;
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+}
+
+        .News_cat:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+

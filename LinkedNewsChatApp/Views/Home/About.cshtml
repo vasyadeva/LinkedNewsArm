@@ -1,0 +1,92 @@
+﻿@model UserModel
+@{
+    ViewData["Title"] = "Про нас";
+    
+    var message = TempData["ResetPassword"];
+    <link rel="stylesheet" href="~/css/about.css">
+    
+    <head>
+    <script>
+           $(".imgBx").on("click", function () {
+               $(this).addClass("active");
+                    $(".card2").removeClass("active");
+                
+                    $(this).addClass("active");
+                
+           
+    </script>
+    </head>
+}
+
+<body style="background-color: black !important;">
+<div class="bg-animation">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+    <div id="stars4"></div>
+</div>
+
+<div>
+    <h1 class="about-h">Про нас</h1>
+</div>
+
+<div class="about-par">
+    <p>
+        <b>Ми</b> – вмотивована та творча молодь, яка прагне більшого і ніколи не зупиняється на досягнутому. 
+        Головне наше завдання – бути корисними для суспільства, а саме для українців, тому ми вирішили розробити вебзастосунок, який міститиме в собі лише правдиву та перевірену інформацію щодо подій у світі, а також передбачатиме можливість обговорення новин в чаті. 
+        В ході розробки ми вирішили додати новини по інтересах, адже в наш час дуже важливо підтримувати своє ментальне здоров’я і вміти відволіктись від болючого сьогодення. 
+        Для зручності, чати поділяються на чати регіонів, групи та приватні повідомлення. 
+        Оскільки заявлений функціонал спрямований на те, щоб донести достовірну інформацію для широкого кола споживачів, які будуть обмінюватись нею в чаті, ми вирішили назвати цей проєкт “LinkedNews”. 
+  Незважаючи на короткий термін, ми змогли втілити ідею в життя і розробили прототип для демонстрації концепції роботи нашого проєкту. Сподіваємось, що LinkedNews допоможе вам бути в курсі останніх подій, а також забезпечить можливість проводити час корисно та цікаво, обмінюючись думками та ідеями з іншими користувачами. Тож приєднуйтесь до нашої спільноти, долучайтеся до цікавих дискусій та стежте за ключовими новинами разом з LinkedNews - вашим надійним джерелом інформації та зв'язком зі світом!
+  </p>
+</div>
+<h2 style="text-align:center; color:white;">Наша Команда </h2>
+<div class="about-member">
+		
+      <div class="card">
+          <div class="card2">
+            <div class="imgBx" id="imgBx1">
+            <img src="~/img/1.jpg" alt="images">
+        </div>
+        <div class="details">
+                    <h2>Черниш Оксана<br><span>.Net Backend Developer</span></h2>
+        </div>
+            </div>
+      </div>
+    
+      
+       <div class="card">
+                <div class="card2">
+            <div class="imgBx" id="imgBx3">
+                    <img src="~/img/3.jpg" alt="images">
+                </div>
+         <div class="details">
+                    <h2>Дева Василь<br><span>.Net Backend Developer</span></h2>
+          </div>
+                </div>
+       </div>
+
+        <div class="card">
+            <div class="card2">
+                <div class="imgBx" id="imgBx2">
+                    <img src="~/img/2.jpg" alt="images">
+                </div>
+                <div class="details">
+                    <h2>Мандзюк Анастасія<br><span>UI/UX Designer</span></h2>
+                </div>
+            </div>
+        </div>
+
+            <div class="card">
+                    <div class="card2">
+            <div class="imgBx" id="imgBx4">
+                    <img src="~/img/4.jpg" alt="images">
+                </div>
+                <div class="details">
+                    <h2>Клуб Віктор<br><span>UI/UX Designer</span></h2>
+                </div>
+                </div>
+            </div>
+       
+</div>
+</body>

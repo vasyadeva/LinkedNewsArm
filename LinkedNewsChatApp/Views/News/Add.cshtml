@@ -1,0 +1,35 @@
+﻿@model LinkedNewsChatApp.Models.PersonData
+@{
+    ViewData["Title"] = "Додати новину";
+}
+
+ <div>
+        <h2 class="edit_h">Pass data using parameters</h2>
+
+        @using (Html.BeginForm("PostUsingParameters", "News", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+        <div class="add_input">
+            
+        <input type="text" name="Fname" placeholder="Назва новини" required />
+            <br />
+            <br />
+            <textarea class="form-control" style="background-color: lavenderblush" name="Lname" placeholder="Опис новини" rows="3" required></textarea>
+            <br />
+            <br />
+            <input type="file" name="file" accept=".jpg, .jpeg, .png" required />
+            <small class="form-text">Supported image formats: .jpg, .jpeg, .png</small>
+            <br />
+            <br />
+            <br />
+            <input class="admin_ep" type="password" name="pass" placeholder="Password">
+            <br />
+            <br />
+            <input id="new_inpt1" type="submit" value="Опублікувати" />
+            
+        </div>
+        }
+        
+   
+  </div>
+
+
