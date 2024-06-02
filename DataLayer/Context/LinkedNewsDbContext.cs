@@ -29,7 +29,8 @@ namespace DataLayer.Context
         {
             base.OnConfiguring(optionsBuilder);
 
-            optionsBuilder.UseSqlServer(_config.GetConnectionString("LinkedNewsDb"));
+            optionsBuilder.UseMySql(_config.GetConnectionString("LinkedNewsDb"), new MySqlServerVersion(new Version(8, 0, 21)));
+              
         }
     }
 }

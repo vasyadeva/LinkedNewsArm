@@ -1,6 +1,5 @@
 ﻿using DataLayer.Context;
 using DataLayer.Entities;
-using DataLayer.Migrations;
 using LinkedNewsChatApp.Hubs;
 using Microsoft.EntityFrameworkCore;
 
